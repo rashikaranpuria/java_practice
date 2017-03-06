@@ -6,5 +6,6 @@ public class Node {
 	
 	Node(int a) {
 		val = a;
+		next = null;
 	}
 }

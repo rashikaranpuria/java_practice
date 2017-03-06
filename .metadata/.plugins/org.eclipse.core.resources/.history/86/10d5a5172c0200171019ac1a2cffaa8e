@@ -1,0 +1,71 @@
+
+public class maint {
+		
+	public static void main(String args[]){
+		LinkedList l1 = new LinkedList(2);
+		l1.add(4);
+		l1.add(6);l1.add(8);l1.add(10);l1.add(12);l1.add(14);
+		
+		l1.printList();
+		l1.reverseList();
+//		System.out.println();
+//		LinkedList l2 = new LinkedList(1);
+//		l2.add(3);
+//		l2.add(5);
+//		
+//		l2.printList();
+//		
+//		LinkedList l3 = new LinkedList();
+//		sortedMerge(l3, l2, l1);
+//		System.out.println();
+//		l3.printList();
+	}
+	
+	
+	private static void sortedMerge(LinkedList l3, LinkedList l2, LinkedList l1) {
+		// merge two sorted lists l1 and l2 into l3
+		if(l2 == null) {
+			l3 = l1;
+			return;
+		}
+		if(l1 == null) {
+			l3 = l2;
+			return;
+		}
+		Node a1 = l1.head; Node a2 = l2.head;
+		Node temp;
+		while (a1 != null && a2 != null) {
+			if(a1.val <= a2.val) {
+				temp = a1;
+				a1 = a1.next;
+				temp.next = null;
+				l3.add(temp);
+			}
+			else {
+				temp = a2;
+				a2 = a2.next;
+				temp.next = null;
+				l3.add(temp);
+			}
+		}
+		if(a1 == null) {
+			while(a2 != null) {
+				temp = a2;
+				a2 = a2.next;
+				temp.next = null;
+				l3.add(temp);
+			}
+		}
+		if(a2 == null) {
+			while (a1 != null) {
+				temp = a1;
+				a1 = a1.next;
+				temp.next = null;
+				l3.add(temp);
+			}
+		}
+		
+	}
+	
+
+}

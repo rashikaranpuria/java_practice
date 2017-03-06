@@ -1,0 +1,13 @@
+
+public class maint {
+		
+	public static void main(String args[]){
+		LinkedList l1 = new LinkedList(1);
+		l1.add(2);
+		l1.add(3);l1.add(4);l1.add(5);
+		
+		l1.printList();
+		l1.reverseList();
+	}
+
+}

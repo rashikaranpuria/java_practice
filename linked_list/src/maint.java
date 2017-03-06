@@ -2,12 +2,72 @@
 public class maint {
 		
 	public static void main(String args[]){
-		LinkedList ll = new LinkedList(1);
-		ll.add(2);
-		ll.add(3);ll.add(4);ll.add(5);
+		LinkedList l1 = new LinkedList(10);
+		l1.add(20);
+		l1.add(30);l1.add(40);l1.add(50);l1.add(60);
 		
-		ll.printList();
-		ll.reverseList();
+		l1.printList();
+		System.out.println();
+		l1.rotate_k(3);
+		l1.printList();
+//		System.out.println();
+//		LinkedList l2 = new LinkedList(1);
+//		l2.add(3);
+//		l2.add(5);
+//		
+//		l2.printList();
+//		
+//		LinkedList l3 = new LinkedList();
+//		sortedMerge(l3, l2, l1);
+//		System.out.println();
+//		l3.printList();
 	}
+	
+	
+	private static void sortedMerge(LinkedList l3, LinkedList l2, LinkedList l1) {
+		// merge two sorted lists l1 and l2 into l3
+		if(l2 == null) {
+			l3 = l1;
+			return;
+		}
+		if(l1 == null) {
+			l3 = l2;
+			return;
+		}
+		Node a1 = l1.head; Node a2 = l2.head;
+		Node temp;
+		while (a1 != null && a2 != null) {
+			if(a1.val <= a2.val) {
+				temp = a1;
+				a1 = a1.next;
+				temp.next = null;
+				l3.add(temp);
+			}
+			else {
+				temp = a2;
+				a2 = a2.next;
+				temp.next = null;
+				l3.add(temp);
+			}
+		}
+		if(a1 == null) {
+			while(a2 != null) {
+				temp = a2;
+				a2 = a2.next;
+				temp.next = null;
+				l3.add(temp);
+			}
+		}
+		if(a2 == null) {
+			while (a1 != null) {
+				temp = a1;
+				a1 = a1.next;
+				temp.next = null;
+				l3.add(temp);
+			}
+		}
+		
+	}
+	
 
 }

@@ -1,0 +1,19 @@
+
+public class maint {
+		
+	public static void main(String args[]){
+		LinkedList l1 = new LinkedList(2);
+		l1.add(4);
+		l1.add(6);l1.add(8);l1.add(10);l1.add(12);l1.add(14);
+		
+		l1.printList();
+//		l1.reverseList();
+		System.out.println();
+		LinkedList l2 = new LinkedList(1);
+		l2.add(3);
+		l2.add(5);
+		
+		l2.printList();
+	}
+
+}

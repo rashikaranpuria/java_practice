@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;ll&apos; in &apos;maint.main(...)&apos; to &apos;l1&apos;&#x0A;- Original project: &apos;linked_list&apos;&#x0A;- Original element: &apos;maint.main(String[]).ll&apos;&#x0A;- Renamed element: &apos;ll&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;ll&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{maint.java[maint~main~\[QString;@ll!68!101!79!80!QLinkedList;!0!false" name="l1" references="true" stamp="1488774930795" version="1.0"/>
+</session>

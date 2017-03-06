@@ -1,0 +1,37 @@
+
+public class maint {
+		
+	public static void main(String args[]){
+		LinkedList l1 = new LinkedList(2);
+		l1.add(4);
+		l1.add(6);l1.add(8);l1.add(10);l1.add(12);l1.add(14);
+		
+		l1.printList();
+//		l1.reverseList();
+		System.out.println();
+		LinkedList l2 = new LinkedList(1);
+		l2.add(3);
+		l2.add(5);
+		
+		l2.printList();
+		
+		LinkedList l3 = new LinkedList();
+		sortedMerge(l3, l2, l1);
+	}
+	
+	
+	private static void sortedMerge(LinkedList l3, LinkedList l2, LinkedList l1) {
+		// merge two sorted lists l1 and l2 into l3
+		if(l2 == null) {
+			l3 = l1;
+			return;
+		}
+		if(l1 == null) {
+			l3 = l2;
+			return;
+		}
+		
+	}
+	
+
+}
