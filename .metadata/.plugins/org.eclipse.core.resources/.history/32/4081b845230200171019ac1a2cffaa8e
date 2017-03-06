@@ -1,0 +1,34 @@
+
+public class LinkedList {
+
+	Node head;
+	
+	LinkedList(int aa) {
+		Node a = new Node(aa);
+		head = a;
+	}
+	
+	public void add(int bb) {
+		Node b = new Node(bb);
+		if(head == null) {
+			head = b;
+			return;
+		}
+		Node temp = head;
+		while(temp.next != null) {
+			temp = temp.next;
+		}
+		temp.next = b;
+	}
+	
+	public void printList() {
+		if(head == null) {
+			System.out.println(" Empty list");
+		}
+		Node temp = head;
+		while(temp.next != null) {
+			System.out.print(" "+ temp.val);
+			temp = temp.next;
+		}
+	}
+}

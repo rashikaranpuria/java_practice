@@ -1,0 +1,58 @@
+
+public class LinkedList {
+
+	Node head;
+	
+	LinkedList(int aa) {
+		Node a = new Node(aa);
+		head = a;
+	}
+	
+	public void add(int bb) {
+		Node b = new Node(bb);
+		if(head == null) {
+			head = b;
+			return;
+		}
+		Node temp = head;
+		while(temp.next != null) {
+			temp = temp.next;
+		}
+		temp.next = b;
+	}
+	
+	public void printList() {
+		if(head == null) {
+			System.out.println(" Empty list");
+		}
+		Node temp = head;
+		while(temp.next != null) {
+			System.out.print(" "+ temp.val);
+			temp = temp.next;
+		}
+	}
+	
+	public void reverseList() {
+		if(head == null || head.next == null) {
+			System.out.println(" Empty list");
+			return;
+		}
+		
+		Node h = head;
+		Node tail = head;
+		while(tail.next != null) {
+			tail = tail.next;
+		}
+		System.out.println(" wrking list" + tail.val);
+		Node next_h = null;
+		Node next_tail = null;
+		while(h != tail && h.next != null) {
+			next_h = h.next;
+			h.next = next_tail;
+			next_tail = h;
+			h = next_h;
+		}
+		head = tail;
+		printList();
+	}
+}

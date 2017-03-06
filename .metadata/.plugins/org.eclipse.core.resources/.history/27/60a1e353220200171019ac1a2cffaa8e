@@ -1,0 +1,32 @@
+
+public class LinkedList {
+
+	Node head;
+	
+	LinkedList(Node a) {
+		head = a;
+	}
+	
+	public void add(Node b) {
+		if(head == null) {
+			head = b;
+			return;
+		}
+		Node temp = head;
+		while(temp.next != null) {
+			temp = temp.next;
+		}
+		temp.next = b;
+	}
+	
+	public void printList() {
+		if(head == null) {
+			System.out.println(" Empty list");
+		}
+		Node temp = head;
+		while(temp.next != null) {
+			System.out.println(" "+ temp.val);
+			temp = temp.next;
+		}
+	}
+}
